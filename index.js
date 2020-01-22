@@ -1,8 +1,9 @@
 'use strict';
 
+const exphbs     = require('express-handlebars');
 const express    = require('express');
 const mongoose   = require('mongoose');
-const exphbs     = require('express-handlebars');
+const path       = require('path');
 const todoRoutes = require('./routes/todos');
 
 const app = express();
@@ -42,6 +43,7 @@ app.set('view engine', 'hbs');
 app.set('views', 'views');
 
 app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(todoRoutes);
 
 async function start() {
