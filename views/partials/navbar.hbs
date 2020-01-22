@@ -1,0 +1,17 @@
+<nav class="blue darken-4">
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Todos</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a href="/" {{#if (eq current "/")}} class="active" {{/if}}>
+                    Todos
+                </a>
+            </li>
+            <li>
+                <a href="/create" {{#if (eq current "/create")}} class="active" {{/if}}>
+                    Create
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
